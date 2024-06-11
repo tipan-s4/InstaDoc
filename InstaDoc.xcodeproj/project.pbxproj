@@ -14,6 +14,14 @@
 		FE0523202C01F84A008DA2C3 /* UrReciptsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE05231F2C01F84A008DA2C3 /* UrReciptsTests.swift */; };
 		FE05232A2C01F84A008DA2C3 /* UrReciptsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0523292C01F84A008DA2C3 /* UrReciptsUITests.swift */; };
 		FE05232C2C01F84A008DA2C3 /* UrReciptsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE05232B2C01F84A008DA2C3 /* UrReciptsUITestsLaunchTests.swift */; };
+		FE05233A2C0202E8008DA2C3 /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0523392C0202E8008DA2C3 /* Receipt.swift */; };
+		FE05233D2C0203C1008DA2C3 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE05233C2C0203C1008DA2C3 /* RowView.swift */; };
+		FE05233F2C0205DB008DA2C3 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE05233E2C0205DB008DA2C3 /* ListView.swift */; };
+		FEE3F1CB2C03AB38008FB653 /* AccessCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1CA2C03AB38008FB653 /* AccessCameraView.swift */; };
+		FEE3F1CD2C03AC70008FB653 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1CC2C03AC70008FB653 /* Coordinator.swift */; };
+		FEE3F1D02C03B2EC008FB653 /* CheckReceiptDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1CF2C03B2EC008FB653 /* CheckReceiptDataView.swift */; };
+		FEE3F1D22C03C70C008FB653 /* ReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1D12C03C70C008FB653 /* ReceiptViewModel.swift */; };
+		FEE3F1DA2C144F74008FB653 /* FullDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1D92C144F74008FB653 /* FullDescriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,16 +42,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FE05230B2C01F847008DA2C3 /* UrRecipts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrRecipts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE05230B2C01F847008DA2C3 /* InstaDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE05230E2C01F847008DA2C3 /* UrReciptsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrReciptsApp.swift; sourceTree = "<group>"; };
 		FE0523102C01F847008DA2C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FE0523122C01F849008DA2C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE0523152C01F849008DA2C3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FE05231B2C01F84A008DA2C3 /* UrReciptsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UrReciptsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE05231B2C01F84A008DA2C3 /* InstaDocTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaDocTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE05231F2C01F84A008DA2C3 /* UrReciptsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrReciptsTests.swift; sourceTree = "<group>"; };
-		FE0523252C01F84A008DA2C3 /* UrReciptsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UrReciptsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0523252C01F84A008DA2C3 /* InstaDocUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaDocUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0523292C01F84A008DA2C3 /* UrReciptsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrReciptsUITests.swift; sourceTree = "<group>"; };
 		FE05232B2C01F84A008DA2C3 /* UrReciptsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrReciptsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FE0523392C0202E8008DA2C3 /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
+		FE05233C2C0203C1008DA2C3 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		FE05233E2C0205DB008DA2C3 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		FEE3F1CA2C03AB38008FB653 /* AccessCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCameraView.swift; sourceTree = "<group>"; };
+		FEE3F1CC2C03AC70008FB653 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FEE3F1CE2C03AD42008FB653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FEE3F1CF2C03B2EC008FB653 /* CheckReceiptDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckReceiptDataView.swift; sourceTree = "<group>"; };
+		FEE3F1D12C03C70C008FB653 /* ReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModel.swift; sourceTree = "<group>"; };
+		FEE3F1D92C144F74008FB653 /* FullDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +101,9 @@
 		FE05230C2C01F847008DA2C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FE05230B2C01F847008DA2C3 /* UrRecipts.app */,
-				FE05231B2C01F84A008DA2C3 /* UrReciptsTests.xctest */,
-				FE0523252C01F84A008DA2C3 /* UrReciptsUITests.xctest */,
+				FE05230B2C01F847008DA2C3 /* InstaDoc.app */,
+				FE05231B2C01F84A008DA2C3 /* InstaDocTests.xctest */,
+				FE0523252C01F84A008DA2C3 /* InstaDocUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,9 +111,11 @@
 		FE05230D2C01F847008DA2C3 /* UrRecipts */ = {
 			isa = PBXGroup;
 			children = (
-				FE05230E2C01F847008DA2C3 /* UrReciptsApp.swift */,
-				FE0523102C01F847008DA2C3 /* ContentView.swift */,
 				FE0523122C01F849008DA2C3 /* Assets.xcassets */,
+				FEE3F1CE2C03AD42008FB653 /* Info.plist */,
+				FE05233B2C020385008DA2C3 /* Views */,
+				FE0523382C0202CC008DA2C3 /* Data */,
+				FE05230E2C01F847008DA2C3 /* UrReciptsApp.swift */,
 				FE0523142C01F849008DA2C3 /* Preview Content */,
 			);
 			path = UrRecipts;
@@ -127,12 +146,35 @@
 			path = UrReciptsUITests;
 			sourceTree = "<group>";
 		};
+		FE0523382C0202CC008DA2C3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FE0523392C0202E8008DA2C3 /* Receipt.swift */,
+				FEE3F1CC2C03AC70008FB653 /* Coordinator.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FE05233B2C020385008DA2C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE0523102C01F847008DA2C3 /* ContentView.swift */,
+				FE05233C2C0203C1008DA2C3 /* RowView.swift */,
+				FE05233E2C0205DB008DA2C3 /* ListView.swift */,
+				FEE3F1CA2C03AB38008FB653 /* AccessCameraView.swift */,
+				FEE3F1CF2C03B2EC008FB653 /* CheckReceiptDataView.swift */,
+				FEE3F1D12C03C70C008FB653 /* ReceiptViewModel.swift */,
+				FEE3F1D92C144F74008FB653 /* FullDescriptionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FE05230A2C01F847008DA2C3 /* UrRecipts */ = {
+		FE05230A2C01F847008DA2C3 /* InstaDoc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FE05232F2C01F84A008DA2C3 /* Build configuration list for PBXNativeTarget "UrRecipts" */;
+			buildConfigurationList = FE05232F2C01F84A008DA2C3 /* Build configuration list for PBXNativeTarget "InstaDoc" */;
 			buildPhases = (
 				FE0523072C01F847008DA2C3 /* Sources */,
 				FE0523082C01F847008DA2C3 /* Frameworks */,
@@ -142,14 +184,14 @@
 			);
 			dependencies = (
 			);
-			name = UrRecipts;
+			name = InstaDoc;
 			productName = UrRecipts;
-			productReference = FE05230B2C01F847008DA2C3 /* UrRecipts.app */;
+			productReference = FE05230B2C01F847008DA2C3 /* InstaDoc.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FE05231A2C01F84A008DA2C3 /* UrReciptsTests */ = {
+		FE05231A2C01F84A008DA2C3 /* InstaDocTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FE0523322C01F84A008DA2C3 /* Build configuration list for PBXNativeTarget "UrReciptsTests" */;
+			buildConfigurationList = FE0523322C01F84A008DA2C3 /* Build configuration list for PBXNativeTarget "InstaDocTests" */;
 			buildPhases = (
 				FE0523172C01F84A008DA2C3 /* Sources */,
 				FE0523182C01F84A008DA2C3 /* Frameworks */,
@@ -160,14 +202,14 @@
 			dependencies = (
 				FE05231D2C01F84A008DA2C3 /* PBXTargetDependency */,
 			);
-			name = UrReciptsTests;
+			name = InstaDocTests;
 			productName = UrReciptsTests;
-			productReference = FE05231B2C01F84A008DA2C3 /* UrReciptsTests.xctest */;
+			productReference = FE05231B2C01F84A008DA2C3 /* InstaDocTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FE0523242C01F84A008DA2C3 /* UrReciptsUITests */ = {
+		FE0523242C01F84A008DA2C3 /* InstaDocUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FE0523352C01F84A008DA2C3 /* Build configuration list for PBXNativeTarget "UrReciptsUITests" */;
+			buildConfigurationList = FE0523352C01F84A008DA2C3 /* Build configuration list for PBXNativeTarget "InstaDocUITests" */;
 			buildPhases = (
 				FE0523212C01F84A008DA2C3 /* Sources */,
 				FE0523222C01F84A008DA2C3 /* Frameworks */,
@@ -178,9 +220,9 @@
 			dependencies = (
 				FE0523272C01F84A008DA2C3 /* PBXTargetDependency */,
 			);
-			name = UrReciptsUITests;
+			name = InstaDocUITests;
 			productName = UrReciptsUITests;
-			productReference = FE0523252C01F84A008DA2C3 /* UrReciptsUITests.xctest */;
+			productReference = FE0523252C01F84A008DA2C3 /* InstaDocUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +248,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FE0523062C01F847008DA2C3 /* Build configuration list for PBXProject "UrRecipts" */;
+			buildConfigurationList = FE0523062C01F847008DA2C3 /* Build configuration list for PBXProject "InstaDoc" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -219,9 +261,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FE05230A2C01F847008DA2C3 /* UrRecipts */,
-				FE05231A2C01F84A008DA2C3 /* UrReciptsTests */,
-				FE0523242C01F84A008DA2C3 /* UrReciptsUITests */,
+				FE05230A2C01F847008DA2C3 /* InstaDoc */,
+				FE05231A2C01F84A008DA2C3 /* InstaDocTests */,
+				FE0523242C01F84A008DA2C3 /* InstaDocUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,8 +299,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE05233A2C0202E8008DA2C3 /* Receipt.swift in Sources */,
 				FE0523112C01F847008DA2C3 /* ContentView.swift in Sources */,
+				FE05233F2C0205DB008DA2C3 /* ListView.swift in Sources */,
+				FEE3F1CB2C03AB38008FB653 /* AccessCameraView.swift in Sources */,
+				FEE3F1DA2C144F74008FB653 /* FullDescriptionView.swift in Sources */,
+				FEE3F1D02C03B2EC008FB653 /* CheckReceiptDataView.swift in Sources */,
 				FE05230F2C01F847008DA2C3 /* UrReciptsApp.swift in Sources */,
+				FE05233D2C0203C1008DA2C3 /* RowView.swift in Sources */,
+				FEE3F1CD2C03AC70008FB653 /* Coordinator.swift in Sources */,
+				FEE3F1D22C03C70C008FB653 /* ReceiptViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,12 +334,12 @@
 /* Begin PBXTargetDependency section */
 		FE05231D2C01F84A008DA2C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FE05230A2C01F847008DA2C3 /* UrRecipts */;
+			target = FE05230A2C01F847008DA2C3 /* InstaDoc */;
 			targetProxy = FE05231C2C01F84A008DA2C3 /* PBXContainerItemProxy */;
 		};
 		FE0523272C01F84A008DA2C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FE05230A2C01F847008DA2C3 /* UrRecipts */;
+			target = FE05230A2C01F847008DA2C3 /* InstaDoc */;
 			targetProxy = FE0523262C01F84A008DA2C3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -420,6 +470,10 @@
 				DEVELOPMENT_TEAM = SPLX3JDZDL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UrRecipts/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = InstaDoc;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to access the camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -430,7 +484,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tipan.UrRecipts;
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tipan.InstaDoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -449,6 +504,10 @@
 				DEVELOPMENT_TEAM = SPLX3JDZDL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UrRecipts/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = InstaDoc;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to access the camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -459,7 +518,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tipan.UrRecipts;
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tipan.InstaDoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -483,7 +543,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UrRecipts.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UrRecipts";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstaDoc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InstaDoc";
 			};
 			name = Debug;
 		};
@@ -503,7 +563,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UrRecipts.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UrRecipts";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstaDoc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InstaDoc";
 			};
 			name = Release;
 		};
@@ -546,7 +606,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FE0523062C01F847008DA2C3 /* Build configuration list for PBXProject "UrRecipts" */ = {
+		FE0523062C01F847008DA2C3 /* Build configuration list for PBXProject "InstaDoc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FE05232D2C01F84A008DA2C3 /* Debug */,
@@ -555,7 +615,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FE05232F2C01F84A008DA2C3 /* Build configuration list for PBXNativeTarget "UrRecipts" */ = {
+		FE05232F2C01F84A008DA2C3 /* Build configuration list for PBXNativeTarget "InstaDoc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FE0523302C01F84A008DA2C3 /* Debug */,
@@ -564,7 +624,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FE0523322C01F84A008DA2C3 /* Build configuration list for PBXNativeTarget "UrReciptsTests" */ = {
+		FE0523322C01F84A008DA2C3 /* Build configuration list for PBXNativeTarget "InstaDocTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FE0523332C01F84A008DA2C3 /* Debug */,
@@ -573,7 +633,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FE0523352C01F84A008DA2C3 /* Build configuration list for PBXNativeTarget "UrReciptsUITests" */ = {
+		FE0523352C01F84A008DA2C3 /* Build configuration list for PBXNativeTarget "InstaDocUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FE0523362C01F84A008DA2C3 /* Debug */,
