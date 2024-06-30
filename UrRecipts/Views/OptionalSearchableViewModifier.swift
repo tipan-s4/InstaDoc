@@ -7,12 +7,17 @@
 
 import SwiftUI
 
-struct OptionalSearchableViewModifier: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct OptionalSearchableViewModifier: ViewModifier{
+    let isSearchable: Bool
+    @Binding var searchString: String
+    
+    func body(content: Content) -> some View {
+        switch isSearchable{
+        case true:
+            content
+                .searchable(text: $searchString, prompt: "Buscar")
+        case false:
+            content
+        }
     }
-}
-
-#Preview {
-    OptionalSearchableViewModifier()
 }

@@ -17,6 +17,11 @@
 		FE05233A2C0202E8008DA2C3 /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0523392C0202E8008DA2C3 /* Receipt.swift */; };
 		FE05233D2C0203C1008DA2C3 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE05233C2C0203C1008DA2C3 /* RowView.swift */; };
 		FE05233F2C0205DB008DA2C3 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE05233E2C0205DB008DA2C3 /* ListView.swift */; };
+		FEC9161B2C26D11000DF3190 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9161A2C26D11000DF3190 /* EventEditView.swift */; };
+		FEC9161D2C2DED0F00DF3190 /* OptionalSearchableViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9161C2C2DED0F00DF3190 /* OptionalSearchableViewModifier.swift */; };
+		FEC9161F2C30153900DF3190 /* ReceiptDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9161E2C30153900DF3190 /* ReceiptDetailView.swift */; };
+		FEC916212C30825900DF3190 /* ReceiptType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC916202C30825900DF3190 /* ReceiptType.swift */; };
+		FEC9162B2C31E68300DF3190 /* ReceiptGeneralDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9162A2C31E68300DF3190 /* ReceiptGeneralDataView.swift */; };
 		FEE3F1CB2C03AB38008FB653 /* AccessCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1CA2C03AB38008FB653 /* AccessCameraView.swift */; };
 		FEE3F1CD2C03AC70008FB653 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1CC2C03AC70008FB653 /* Coordinator.swift */; };
 		FEE3F1D02C03B2EC008FB653 /* CheckReceiptDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1CF2C03B2EC008FB653 /* CheckReceiptDataView.swift */; };
@@ -55,6 +60,11 @@
 		FE0523392C0202E8008DA2C3 /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
 		FE05233C2C0203C1008DA2C3 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		FE05233E2C0205DB008DA2C3 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		FEC9161A2C26D11000DF3190 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
+		FEC9161C2C2DED0F00DF3190 /* OptionalSearchableViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalSearchableViewModifier.swift; sourceTree = "<group>"; };
+		FEC9161E2C30153900DF3190 /* ReceiptDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailView.swift; sourceTree = "<group>"; };
+		FEC916202C30825900DF3190 /* ReceiptType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptType.swift; sourceTree = "<group>"; };
+		FEC9162A2C31E68300DF3190 /* ReceiptGeneralDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptGeneralDataView.swift; sourceTree = "<group>"; };
 		FEE3F1CA2C03AB38008FB653 /* AccessCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCameraView.swift; sourceTree = "<group>"; };
 		FEE3F1CC2C03AC70008FB653 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FEE3F1CE2C03AD42008FB653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +161,7 @@
 			children = (
 				FE0523392C0202E8008DA2C3 /* Receipt.swift */,
 				FEE3F1CC2C03AC70008FB653 /* Coordinator.swift */,
+				FEC916202C30825900DF3190 /* ReceiptType.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -159,12 +170,16 @@
 			isa = PBXGroup;
 			children = (
 				FE0523102C01F847008DA2C3 /* ContentView.swift */,
+				FEC9162A2C31E68300DF3190 /* ReceiptGeneralDataView.swift */,
 				FE05233C2C0203C1008DA2C3 /* RowView.swift */,
 				FE05233E2C0205DB008DA2C3 /* ListView.swift */,
 				FEE3F1CA2C03AB38008FB653 /* AccessCameraView.swift */,
 				FEE3F1CF2C03B2EC008FB653 /* CheckReceiptDataView.swift */,
 				FEE3F1D12C03C70C008FB653 /* ReceiptViewModel.swift */,
 				FEE3F1D92C144F74008FB653 /* FullDescriptionView.swift */,
+				FEC9161A2C26D11000DF3190 /* EventEditView.swift */,
+				FEC9161C2C2DED0F00DF3190 /* OptionalSearchableViewModifier.swift */,
+				FEC9161E2C30153900DF3190 /* ReceiptDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,8 +316,13 @@
 			files = (
 				FE05233A2C0202E8008DA2C3 /* Receipt.swift in Sources */,
 				FE0523112C01F847008DA2C3 /* ContentView.swift in Sources */,
+				FEC9162B2C31E68300DF3190 /* ReceiptGeneralDataView.swift in Sources */,
+				FEC9161B2C26D11000DF3190 /* EventEditView.swift in Sources */,
 				FE05233F2C0205DB008DA2C3 /* ListView.swift in Sources */,
 				FEE3F1CB2C03AB38008FB653 /* AccessCameraView.swift in Sources */,
+				FEC9161D2C2DED0F00DF3190 /* OptionalSearchableViewModifier.swift in Sources */,
+				FEC9161F2C30153900DF3190 /* ReceiptDetailView.swift in Sources */,
+				FEC916212C30825900DF3190 /* ReceiptType.swift in Sources */,
 				FEE3F1DA2C144F74008FB653 /* FullDescriptionView.swift in Sources */,
 				FEE3F1D02C03B2EC008FB653 /* CheckReceiptDataView.swift in Sources */,
 				FE05230F2C01F847008DA2C3 /* UrReciptsApp.swift in Sources */,
@@ -396,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -451,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -538,7 +558,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SPLX3JDZDL;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tipan.UrReciptsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -558,7 +578,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SPLX3JDZDL;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tipan.UrReciptsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

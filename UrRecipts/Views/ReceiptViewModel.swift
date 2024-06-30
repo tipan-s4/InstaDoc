@@ -32,7 +32,7 @@ class ReceiptViewModel: ObservableObject {
             }
             
             var date: String?
-            var receipt = Receipt()
+            let receipt = Receipt()
             let maximumCandidates = 1
             var maxTitleHeight: CGFloat = 0.0
             

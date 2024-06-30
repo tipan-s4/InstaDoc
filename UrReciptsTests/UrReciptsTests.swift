@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import UrRecipts
+@testable import InstaDoc
 
 final class UrReciptsTests: XCTestCase {
 

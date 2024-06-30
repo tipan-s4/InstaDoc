@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Group {
+class ReceiptType {
     var name: String
     var icon: String
     

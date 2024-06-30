@@ -8,57 +8,30 @@
 import Foundation
 import SwiftUI
 import EventKit
+import EventKitUI
+import SwiftData
 
 struct CheckReceiptDataView: View {
     var selectedImage: UIImage?
+    @Binding var navigateToCheckReceiptDataView: Bool
     @ObservedObject var viewModel: ReceiptViewModel
     @Environment(\.defaultMinListRowHeight) var minRowHeight
+    @Environment(\.modelContext) var context
     @State private var showingSheet: Bool = false
+    @State private var showEventEditView: Bool = false
+    @State private var navigateToHome: Bool = false
+    @State private var eventStore = EKEventStore()
+    @State private var event: EKEvent?
+    
+    @State var groups: [ReceiptType]
     
     var body: some View {
-        ScrollView {
             VStack (alignment: .leading) {
-                
                 if selectedImage != nil {
-                    
-                    GroupBox {
-                        VStack(alignment: .leading) {
-                            
-                            createGroup(label: "Titulo", text: Binding<String>(
-                                get: { viewModel.receipt.title ?? "" },
-                                set: { newValue in viewModel.receipt.title = newValue }
-                            ))
-                            
-                            createGroup(label: "Teléfono", text: Binding<String>(
-                                get: { viewModel.receipt.phone ?? "" },
-                                set: { newValue in viewModel.receipt.phone = newValue }
-                            ))
-                            
-                            createGroup(label: "Email", text: Binding<String>(
-                                get: { viewModel.receipt.email ?? "" },
-                                set: { newValue in viewModel.receipt.email = newValue }
-                            ))
-                            
-                            createGroup(label: "Dirección", text: Binding<String>(
-                                get: { viewModel.receipt.address ?? "" },
-                                set: { newValue in viewModel.receipt.address = newValue }
-                            ))
-                            
-                            DatePicker(selection: Binding<Date>(
-                                get: { viewModel.receipt.date ?? Date() },
-                                set: { newValue in viewModel.receipt.date = newValue }
-                            ),
-                               displayedComponents: [.hourAndMinute, .date],
-                                label: {
-                                    Text("Fecha")
-                                }
-                            )
-                        }
-                    }
-                    .padding()
-                    
                     List {
-                        Section(header:         
+                        ReceiptGeneralDataView(title: "", receipt: viewModel.receipt, groups: groups)
+                        
+                        Section(header:
                             HStack {
                                 Text("Descripcion")
                                 Spacer()
@@ -81,6 +54,7 @@ struct CheckReceiptDataView: View {
                             })
                             Button(action: {
                                 viewModel.receipt.fullInfo.append("")
+                                viewModel.objectWillChange.send() 
                             }) {
                                 HStack {
                                     Image(systemName: "plus.circle.fill")
@@ -88,9 +62,8 @@ struct CheckReceiptDataView: View {
                                 }
                             }
                         }
+                        .listRowBackground(Color("CardColor"))
                     }
-                    .frame(minHeight: minRowHeight * CGFloat(viewModel.receipt.fullInfo.count))
-                    .listStyle(.automatic)
                                             
                     
                 } else {
@@ -106,50 +79,40 @@ struct CheckReceiptDataView: View {
                 if let image = selectedImage {
                     viewModel.recognizeText(image: image)
                 }
+        }
+        .scrollContentBackground(.hidden)
+        .background(Color("CustomBackgroundColor"))
+        .toolbar {
+            ToolbarItem(placement: .automatic) {
+                Button(action: addEvent) {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundColor(Color("IconColor"))
+                }
             }
         }
         .toolbar {
-            ToolbarItem(placement: .automatic) {
-                Button(action: {
-                    let eventStore : EKEventStore = EKEventStore()
-                    
-                    eventStore.requestAccess(to: .event) { (granted, error) in
-                      
-                      if (granted) && (error == nil) {
-                          print("granted \(granted)")
-                          print("error \(String(describing: error))")
-                          
-                          let event:EKEvent = EKEvent(eventStore: eventStore)
-                          
-                          event.title = viewModel.receipt.title
-                          event.startDate = viewModel.receipt.date
-                          event.endDate = viewModel.receipt.date
-                          event.location = viewModel.receipt.address
-                          event.notes = viewModel.receipt.description ?? viewModel.receipt.fullInfo.joined(separator: "\n")
-                          event.calendar = eventStore.defaultCalendarForNewEvents
-                          event.addAlarm(EKAlarm(relativeOffset: -3600))
-                          
-                          do {
-                              try eventStore.save(event, span: .thisEvent)
-                                                            
-                              DispatchQueue.main.async {
-                                  if let url = URL(string: "calshow:\(event.startDate.timeIntervalSinceReferenceDate)") {
-                                      UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                                  }
-                              }
-                              
-                          } catch let error as NSError {
-                              print("failed to save event with error : \(error)")
-                          }
-                          print("Saved Event")
-                      }
-                      else{
-                      
-                          print("failed to save event with error : \(String(describing: error)) or access not granted")
-                      }
-                    }   
-                }) {
-                    Image(systemName: "square.and.arrow.up")
+            ToolbarItem(placement: .bottomBar) {
+                Button(action: saveEvent) {
+                    Text("Guardar")
+                        .foregroundColor(Color("IconColor"))
+                }
+            }
+        }
+        .background(.clear)
+        .sheet(isPresented: $showEventEditView) {
+            if let event = createEvent() {
+                EventEditView(event: event, eventStore: eventStore) { success in
+                    if success {
+                        print("Event was added to the calendar.")
+                        
+                        DispatchQueue.main.async {
+                            if let url = URL(string: "calshow:\(event.startDate.timeIntervalSinceReferenceDate)") {
+                                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                            }
+                        }
+                    } else {
+                        print("Event addition was canceled or failed.")
+                    }
                 }
             }
         }
@@ -159,36 +122,76 @@ struct CheckReceiptDataView: View {
                 .presentationBackgroundInteraction(.enabled)
                 .presentationBackground(.background)
         }
+        .navigationDestination(isPresented: $navigateToHome) {
+            ContentView()
+        }
     }
     
-    @ViewBuilder
-    func createGroup(label: String, text: Binding<String>, drawSeparator: Bool = true) -> some View {
-        Group{
-            Text(label)
-                .font(.footnote)
-                .fontWeight(.light)
-                .foregroundColor(Color.gray)
-                .padding(.bottom, -2.0)
-            
-            TextField(label, text: text)
-                .accessibilityLabel(label)
-            
-            if drawSeparator {
-                Divider()
-                    .padding(.vertical, 4)
-            }
+    private func addEvent() {
+        eventStore.requestFullAccessToEvents { granted, error in
+             if granted && error == nil {
+                 print("Access granted to the calendar.")
+                 DispatchQueue.main.async {
+                     showEventEditView = true
+                 }
+             } else {
+                 print("Access denied to the calendar or error: \(String(describing: error))")
+             }
+         }
+     }
+     
+     private func createEvent() -> EKEvent? {
+         guard let title = viewModel.receipt.title,
+               let date = viewModel.receipt.date else {
+             return nil
+         }
+         
+         let event = EKEvent(eventStore: eventStore)
+         event.title = title
+         event.startDate = date
+         event.endDate = date.addingTimeInterval(3600)
+         event.location = viewModel.receipt.address
+         event.notes = viewModel.receipt.info ?? viewModel.receipt.fullInfo.joined(separator: "\n")
+         event.calendar = eventStore.defaultCalendarForNewEvents
+         event.addAlarm(EKAlarm(relativeOffset: -3600))
+         
+         return event
+     }
+    
+    private func saveEvent() {
+        let receipt = viewModel.receipt
+        
+        if (receipt.title == nil || receipt.date == nil || receipt.type == nil) {
+            return
         }
+        
+        receipt.info = viewModel.receipt.info ?? viewModel.receipt.fullInfo.joined(separator: "\n")
+
+        context.insert(receipt)
+        self.navigateToCheckReceiptDataView = false
     }
 }
 
-struct CheckReceiptDataView_Previews: PreviewProvider {
-    static var previews: some View {
-        let sampleImage = UIImage(named: "example1")
-        let viewModel = ReceiptViewModel()
-        viewModel.receipt = Receipt(id: 1, title: "Sample Title", description: "Sample Description", address: "Sample Address", phone: "1234567890", email: "sample@example.com", date: Date())
-        
-        return NavigationView {
-            CheckReceiptDataView(selectedImage: sampleImage, viewModel: viewModel)
-        }
+extension Binding {
+     func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T>  {
+        Binding<T>(get: { self.wrappedValue ?? defaultValue }, set: { self.wrappedValue = $0 })
     }
 }
+
+//struct CheckReceiptDataView_Previews: PreviewProvider {
+//    @State static private var navigateToCheckReceiptDataView = true
+//    
+//    static var previews: some View {
+//        let sampleImage = UIImage(named: "example1")
+//        let viewModel = ReceiptViewModel()
+//        viewModel.receipt = Receipt(title: "Sample Title", info: "Sample Description", address: "Sample Address", phone: "1234567890", email: "sample@example.com", date: Date())
+//        
+//        return NavigationView {
+//            CheckReceiptDataView(selectedImage: sampleImage, navigateToCheckReceiptDataView: $navigateToCheckReceiptDataView, viewModel: viewModel, groups: [
+//                ReceiptType(name: "Salud", icon: "pills"),
+//                ReceiptType(name: "Gastos", icon: "creditcard"),
+//                ReceiptType(name: "Otros", icon: "list.bullet.rectangle.portrait")
+//            ])
+//        }
+//    }
+//}
