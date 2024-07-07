@@ -47,18 +47,11 @@ struct ContentView: View {
                 ToolbarItem(placement: .automatic) {
                     HStack {
                         Menu {
-                            
-                            Button(action: {
-                                groupSelected = nil
-                            }) {
-                                Label("Todos", systemImage: "checklist.checked")
-                            }
-                            
-                            ForEach(groups, id: \.self) { group in
-                                Button(action: {
-                                    groupSelected = group
-                                }) {
-                                    Label(group.name, systemImage: group.icon)
+                            Picker(selection: $groupSelected, label: Text("")) {
+                                Label("Todos", systemImage: "checklist.checked").tag(nil as ReceiptType?)
+
+                                ForEach(groups, id: \.self) { group in
+                                    Label(group.name, systemImage: group.icon).tag(group as ReceiptType?)
                                 }
                             }
                         } label: {

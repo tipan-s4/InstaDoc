@@ -26,9 +26,14 @@ struct ListView: View {
         self.groups = groups
         self.groupSelected = groupSelected
         
+        let groupId = groupSelected?.persistentModelID
+        
         _receipts = Query(
-            filter: Receipt.predicate(searchText: searchText, group: groupSelected),
-            sort: \Receipt.date
+                filter: #Predicate {
+                    (searchText.isEmpty || $0.title.localizedStandardContains(searchText)) &&
+                    (groupId == nil || $0.type?.persistentModelID == groupId)
+                },
+                sort: \.date
         )
         
         UITableView.appearance().backgroundColor = UIColor(named: "CustomBackgroundColor")

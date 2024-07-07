@@ -15,7 +15,7 @@ struct ReceiptGeneralDataView: View {
     
     var body: some View {
         Section(header: Text("")) {
-            createGroup(label: "Titulo", text: $receipt.title.toUnwrapped(defaultValue: ""))
+            createGroup(label: "Titulo", text: $receipt.title)
 
             createGroup(label: "Teléfono", text: $receipt.phone.toUnwrapped(defaultValue: ""))
 

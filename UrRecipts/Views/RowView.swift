@@ -22,7 +22,7 @@ struct RowView: View {
                 .foregroundColor(Color("IconColor"))
             
             VStack(alignment: .leading) {
-                Text(receipt.title?.capitalized ?? "")
+                Text(receipt.title.capitalized)
                     .font(.title3)
                     .fontWeight(.semibold)
                     .foregroundColor(Color("TextColor"))

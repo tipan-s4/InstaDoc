@@ -141,13 +141,13 @@ struct CheckReceiptDataView: View {
      }
      
      private func createEvent() -> EKEvent? {
-         guard let title = viewModel.receipt.title,
+         guard !viewModel.receipt.title.isEmpty,
                let date = viewModel.receipt.date else {
              return nil
          }
          
          let event = EKEvent(eventStore: eventStore)
-         event.title = title
+         event.title = viewModel.receipt.title
          event.startDate = date
          event.endDate = date.addingTimeInterval(3600)
          event.location = viewModel.receipt.address
@@ -161,7 +161,7 @@ struct CheckReceiptDataView: View {
     private func saveEvent() {
         let receipt = viewModel.receipt
         
-        if (receipt.title == nil || receipt.date == nil || receipt.type == nil) {
+        if (receipt.title.isEmpty || receipt.date == nil || receipt.type == nil) {
             return
         }
         
